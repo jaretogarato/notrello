@@ -20,17 +20,17 @@ class Items extends Component {
     // if(status)
     //   visible = items.filter( item => item.status === status)
 
-    let col1 = items.filter( item => item.status == this.stati[0] )
-    let col2 = items.filter( item => item.status == this.stati[1] )
-    let col3 = items.filter( item => item.status == this.stati[2] )
-    let col4 = items.filter( item => item.status == this.stati[3] )
-    let col5 = items.filter( item => item.status == this.stati[4] )
+    // let col1 = items.filter( item => item.status == this.stati[0] )
+    // let col2 = items.filter( item => item.status == this.stati[1] )
+    // let col3 = items.filter( item => item.status == this.stati[2] )
+    // let col4 = items.filter( item => item.status == this.stati[3] )
+    // let col5 = items.filter( item => item.status == this.stati[4] )
     // debugger
     // this.stati
 
 
     return [0,1,2,3,4].map( col =>
-        <Grid.Column key={col} computer={3} mobile={16} tablet={16}>
+        <Grid.Column key={col} equal>
           { items.filter( i => i.status === this.stati[col]).map( item =>
               <Card style={styles.itemCard}>
                 <Card.Content>
@@ -75,7 +75,7 @@ class Items extends Component {
           onChange={ (e, data) => this.setState({ status: data.value })}
         />
         { status && <Button fluid basic onClick={this.clearFilter}>Clear Filter</Button> }
-        <Grid columns={16}>
+        <Grid columns='equal'>
           <Grid.Row>
             { this.items() }
           </Grid.Row>

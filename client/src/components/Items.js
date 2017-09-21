@@ -22,28 +22,29 @@ class Items extends Component {
         <Grid.Column key={col} equal>
           <h2 style={{ color: 'black'}}>{ this.stati[col] }</h2>
           { items.filter( i => i.status === this.stati[col]).map( item =>
-              <Card style={styles.itemCard}>
-                <Card.Content>
-                  <Card.Header>{item.title}</Card.Header>
-                  <Card.Meta>
-                    <span>{item.details}</span>
-                    <p>
-                      <span>Status: {item.status}</span>
-                      <span>Priority: {item.priority}</span>
-                      <span>Color: {item.color}</span>
-                    </p>
-                  </Card.Meta>
-                  <Card.Description style={styles.itemDescription}>
-                    {item.description}
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <Link to={`/items/${item.id}`}>View Item</Link>
-                </Card.Content>
-              </Card>
-            )
-          }
-        </Grid.Column>
+            <Card style={styles.itemCard, { backgroundColor: item.color} } color={item.color} >
+              <Card.Content>
+                <Card.Header>{item.title}</Card.Header>
+                <Card.Meta>
+                  <span>{item.details}</span>
+                  {/* <p>Status: {item.status}</p> */}
+                  <p>&nbsp;</p>
+                  <p>
+                    <strong>Priority: {item.priority}</strong><br />
+                    <strong>Color: {item.color}</strong>
+                  </p>
+                </Card.Meta>
+                <Card.Description style={styles.itemDescription}>
+                  {item.description}
+                </Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <Link to={`/items/${item.id}`}>View Item</Link>
+              </Card.Content>
+            </Card>
+          )
+        }
+      </Grid.Column>
     )
   }
 
@@ -77,11 +78,9 @@ class Items extends Component {
 
 const styles = {
   itemDescription: {
-    // height: '100px',
     overflowY: 'scroll',
   },
   itemCard: {
-    // height: '300px',
     marginBottom: '10px'
   },
 }

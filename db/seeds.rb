@@ -1,5 +1,5 @@
 statuses = ['Stories', 'To Do', 'In Progress', 'Testing', 'Done']
-colors = ['Pink', 'Blue', 'Yellow']
+colors = ['pink', 'blue', 'yellow']
 
 100.times do
   Item.create(

@@ -8,13 +8,6 @@ const ItemView = ({ item = {} }) => (
     <Link to="/items">View All Items</Link>
     <Header as="h3" textAlign="center">{item.name}</Header>
     <Table definition>
-      {/* <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>aaa</Table.HeaderCell>
-          <Table.HeaderCell>bbb</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header> */}
-
       <Table.Body>
         <Table.Row>
           <Table.Cell>Title</Table.Cell>

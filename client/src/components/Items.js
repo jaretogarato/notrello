@@ -17,20 +17,10 @@ class Items extends Component {
     const { items } = this.props;
     const { status } = this.state;
     let visible = items;
-    // if(status)
-    //   visible = items.filter( item => item.status === status)
-
-    // let col1 = items.filter( item => item.status == this.stati[0] )
-    // let col2 = items.filter( item => item.status == this.stati[1] )
-    // let col3 = items.filter( item => item.status == this.stati[2] )
-    // let col4 = items.filter( item => item.status == this.stati[3] )
-    // let col5 = items.filter( item => item.status == this.stati[4] )
-    // debugger
-    // this.stati
-
 
     return [0,1,2,3,4].map( col =>
         <Grid.Column key={col} equal>
+          <h2 style={{ color: 'black'}}>{ this.stati[col] }</h2>
           { items.filter( i => i.status === this.stati[col]).map( item =>
               <Card style={styles.itemCard}>
                 <Card.Content>
@@ -87,11 +77,11 @@ class Items extends Component {
 
 const styles = {
   itemDescription: {
-    height: '100px',
+    // height: '100px',
     overflowY: 'scroll',
   },
   itemCard: {
-    height: '300px',
+    // height: '300px',
     marginBottom: '10px'
   },
 }
